@@ -1,0 +1,12 @@
+machine:
+  ruby:
+    version: 2.3
+deployment:
+  master:
+    branch: master
+    commands:
+      - gem install berkshelf
+      - berks package cookbooks.tar.gz
+general:
+  artifacts:
+    - cookbooks.tar.gz
