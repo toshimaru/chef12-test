@@ -1,0 +1,26 @@
+DEPENDENCIES
+  rbenv
+  ruby_build
+
+GRAPH
+  7-zip (1.0.2)
+    windows (>= 1.2.2)
+  apt (2.9.2)
+  build-essential (2.4.0)
+    7-zip (>= 0.0.0)
+  chef_handler (1.4.0)
+  dmg (2.4.0)
+  git (4.5.0)
+    build-essential (>= 0.0.0)
+    dmg (>= 0.0.0)
+    windows (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  ohai (2.1.0)
+  rbenv (1.7.1)
+    apt (>= 0.0.0)
+    build-essential (>= 0.0.0)
+    git (>= 0.0.0)
+    ohai (>= 1.1)
+  ruby_build (0.8.0)
+  windows (1.43.0)
+    chef_handler (>= 0.0.0)
