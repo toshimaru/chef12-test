@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/app
+    docker:
+      - image: circleci/ruby:2.5
+    steps:
+      - checkout
+      # Restore bundle cache
+      - type: cache-restore
+        key: bundle-{{ checksum "Gemfile.lock" }}
+      # Bundle install dependencies
+      - run: bundle install --path vendor/bundle
+      # Store bundle cache
+      - type: cache-save
+        key: bundle-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+      # Generate cookbooks
+      - run: bundle exec berks package cookbooks.tar.gz
+      - store_artifacts:
+          path: cookbooks.tar.gz
